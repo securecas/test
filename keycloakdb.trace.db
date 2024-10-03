@@ -1,0 +1,542 @@
+2024-06-23 14:28:57.014653+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "MIGRATION_MODEL" not found (this database is empty); SQL statement:
+SELECT ID, VERSION FROM MIGRATION_MODEL ORDER BY UPDATE_TIME DESC [42104-224]
+2024-06-23 14:29:01.947870+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "DATABASECHANGELOG" not found (this database is empty); SQL statement:
+SELECT COUNT(*) FROM PUBLIC.DATABASECHANGELOG [42104-224]
+2024-06-23 14:29:02.960519+02:00 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "DATABASECHANGELOGLOCK" not found (this database is empty); SQL statement:
+SELECT COUNT(*) FROM PUBLIC.DATABASECHANGELOGLOCK [42104-224]
+2024-06-23 14:29:03.245999+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "DATABASECHANGELOG" non trouvée
+Table "DATABASECHANGELOG" not found; SQL statement:
+SELECT COUNT(*) FROM PUBLIC.DATABASECHANGELOG [42102-224]
+2024-07-15 19:29:03.187261+02:00 database: flush
+org.h2.message.DbException: Erreur générale: "org.h2.mvstore.MVStoreException: Could not open file C:/Users/maxim/Downloads/keycloak-24.0.4(2)/keycloak-24.0.4/data/h2/keycloakdb.mv.db [2.2.224/1]"
+General error: "org.h2.mvstore.MVStoreException: Could not open file C:/Users/maxim/Downloads/keycloak-24.0.4(2)/keycloak-24.0.4/data/h2/keycloakdb.mv.db [2.2.224/1]" [50000-224]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1546)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2035)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:326)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at org.h2.jdbcx.JdbcDataSource.getXAConnection(JdbcDataSource.java:322)
+	at io.agroal.pool.ConnectionFactory.createConnection(ConnectionFactory.java:231)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:545)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:526)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at io.agroal.pool.util.PriorityScheduledExecutor.beforeExecute(PriorityScheduledExecutor.java:75)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Erreur générale: "org.h2.mvstore.MVStoreException: Could not open file C:/Users/maxim/Downloads/keycloak-24.0.4(2)/keycloak-24.0.4/data/h2/keycloakdb.mv.db [2.2.224/1]"
+General error: "org.h2.mvstore.MVStoreException: Could not open file C:/Users/maxim/Downloads/keycloak-24.0.4(2)/keycloak-24.0.4/data/h2/keycloakdb.mv.db [2.2.224/1]" [50000-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 23 more
+Caused by: org.h2.mvstore.MVStoreException: Could not open file C:/Users/maxim/Downloads/keycloak-24.0.4(2)/keycloak-24.0.4/data/h2/keycloakdb.mv.db [2.2.224/1]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:126)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
+	... 17 more
+Caused by: java.nio.channels.ClosedByInterruptException
+	at java.base/java.nio.channels.spi.AbstractInterruptibleChannel.end(AbstractInterruptibleChannel.java:200)
+	at java.base/sun.nio.ch.FileChannelImpl.endBlocking(FileChannelImpl.java:172)
+	at java.base/sun.nio.ch.FileChannelImpl.size(FileChannelImpl.java:437)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:120)
+	... 19 more
+2024-07-15 19:29:03.214252+02:00 database: opening C:/Users/maxim/Downloads/keycloak-24.0.4(2)/keycloak-24.0.4/data/h2/keycloakdb
+org.h2.message.DbException: IO Exception: "C:/Users/maxim/Downloads/keycloak-24.0.4(2)/keycloak-24.0.4/data/h2/keycloakdb.mv.db"
+IO Exception: "C:/Users/maxim/Downloads/keycloak-24.0.4(2)/keycloak-24.0.4/data/h2/keycloakdb.mv.db" [90028-224]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.mvstore.db.Store.convertMVStoreException(Store.java:168)
+	at org.h2.mvstore.db.Store.<init>(Store.java:142)
+	at org.h2.engine.Database.<init>(Database.java:326)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at org.h2.jdbcx.JdbcDataSource.getXAConnection(JdbcDataSource.java:322)
+	at io.agroal.pool.ConnectionFactory.createConnection(ConnectionFactory.java:231)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:545)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:526)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at io.agroal.pool.util.PriorityScheduledExecutor.beforeExecute(PriorityScheduledExecutor.java:75)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: IO Exception: "C:/Users/maxim/Downloads/keycloak-24.0.4(2)/keycloak-24.0.4/data/h2/keycloakdb.mv.db"
+IO Exception: "C:/Users/maxim/Downloads/keycloak-24.0.4(2)/keycloak-24.0.4/data/h2/keycloakdb.mv.db" [90028-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 18 more
+Caused by: org.h2.mvstore.MVStoreException: Could not open file C:/Users/maxim/Downloads/keycloak-24.0.4(2)/keycloak-24.0.4/data/h2/keycloakdb.mv.db [2.2.224/1]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:126)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2035)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	... 15 more
+Caused by: java.nio.channels.ClosedByInterruptException
+	at java.base/java.nio.channels.spi.AbstractInterruptibleChannel.end(AbstractInterruptibleChannel.java:200)
+	at java.base/sun.nio.ch.FileChannelImpl.endBlocking(FileChannelImpl.java:172)
+	at java.base/sun.nio.ch.FileChannelImpl.size(FileChannelImpl.java:437)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:120)
+	... 19 more
+2024-07-16 17:36:30.139058+02:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLTimeoutException: Dépassement du temps lors du vérrouillage de la table {0}
+Timeout trying to lock table {0}; SQL statement:
+insert into REALM (ACCESS_CODE_LIFESPAN,LOGIN_LIFESPAN,USER_ACTION_LIFESPAN,ACCESS_TOKEN_LIFESPAN,ACCESS_TOKEN_LIFE_IMPLICIT,ACCOUNT_THEME,ADMIN_EVENTS_DETAILS_ENABLED,ADMIN_EVENTS_ENABLED,ADMIN_THEME,ALLOW_USER_MANAGED_ACCESS,BROWSER_FLOW,CLIENT_AUTH_FLOW,DEFAULT_LOCALE,DEFAULT_ROLE,DIRECT_GRANT_FLOW,DOCKER_AUTH_FLOW,DUPLICATE_EMAILS_ALLOWED,EDIT_USERNAME_ALLOWED,EMAIL_THEME,ENABLED,EVENTS_ENABLED,EVENTS_EXPIRATION,INTERNATIONALIZATION_ENABLED,LOGIN_THEME,LOGIN_WITH_EMAIL_ALLOWED,MASTER_ADMIN_CLIENT,NAME,NOT_BEFORE,OFFLINE_SESSION_IDLE_TIMEOUT,OTP_POLICY_ALG,OTP_POLICY_DIGITS,OTP_POLICY_COUNTER,OTP_POLICY_WINDOW,OTP_POLICY_PERIOD,OTP_POLICY_TYPE,PASSWORD_POLICY,REFRESH_TOKEN_MAX_REUSE,REGISTRATION_ALLOWED,REG_EMAIL_AS_USERNAME,REGISTRATION_FLOW,REMEMBER_ME,RESET_CREDENTIALS_FLOW,RESET_PASSWORD_ALLOWED,REVOKE_REFRESH_TOKEN,SSL_REQUIRED,SSO_IDLE_TIMEOUT,SSO_IDLE_TIMEOUT_REMEMBER_ME,SSO_MAX_LIFESPAN,SSO_MAX_LIFESPAN_REMEMBER_ME,VERIFY_EMAIL,ID) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) [50200-224]
+2024-07-26 18:01:45.764669+02:00 database: flush
+org.h2.message.DbException: Erreur générale: "org.h2.mvstore.MVStoreException: Writing to sun.nio.ch.FileChannelImpl@2148ceb failed; length 8192 at 36864 [2.2.224/2]"
+General error: "org.h2.mvstore.MVStoreException: Writing to sun.nio.ch.FileChannelImpl@2148ceb failed; length 8192 at 36864 [2.2.224/2]" [50000-224]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1546)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
+	at org.h2.mvstore.FileStore.storeBuffer(FileStore.java:1527)
+	at org.h2.mvstore.FileStore.lambda$serializeAndStore$3(FileStore.java:1432)
+	at org.h2.mvstore.FileStore.submitOrRun(FileStore.java:1401)
+	at org.h2.mvstore.FileStore.serializeAndStore(FileStore.java:1432)
+	at org.h2.mvstore.FileStore.lambda$storeIt$2(FileStore.java:1376)
+	at org.h2.mvstore.FileStore.submitOrRun(FileStore.java:1401)
+	at org.h2.mvstore.FileStore.storeIt(FileStore.java:1375)
+	at org.h2.mvstore.MVStore.storeNow(MVStore.java:843)
+	at org.h2.mvstore.MVStore.store(MVStore.java:808)
+	at org.h2.mvstore.MVStore.commit(MVStore.java:778)
+	at org.h2.mvstore.MVStore.commit(MVStore.java:770)
+	at org.h2.mvstore.tx.TransactionStore.close(TransactionStore.java:365)
+	at org.h2.mvstore.db.Store.close(Store.java:349)
+	at org.h2.engine.Database.closeOpenFilesAndUnlock(Database.java:1293)
+	at org.h2.engine.Database.<init>(Database.java:401)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at org.h2.jdbcx.JdbcDataSource.getXAConnection(JdbcDataSource.java:322)
+	at io.agroal.pool.ConnectionFactory.createConnection(ConnectionFactory.java:231)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:545)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:526)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at io.agroal.pool.util.PriorityScheduledExecutor.beforeExecute(PriorityScheduledExecutor.java:75)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Erreur générale: "org.h2.mvstore.MVStoreException: Writing to sun.nio.ch.FileChannelImpl@2148ceb failed; length 8192 at 36864 [2.2.224/2]"
+General error: "org.h2.mvstore.MVStoreException: Writing to sun.nio.ch.FileChannelImpl@2148ceb failed; length 8192 at 36864 [2.2.224/2]" [50000-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 34 more
+Caused by: org.h2.mvstore.MVStoreException: Writing to sun.nio.ch.FileChannelImpl@2148ceb failed; length 8192 at 36864 [2.2.224/2]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.DataUtils.writeFully(DataUtils.java:478)
+	at org.h2.mvstore.SingleFileStore.writeFully(SingleFileStore.java:67)
+	at org.h2.mvstore.SingleFileStore.writeFully(SingleFileStore.java:28)
+	at org.h2.mvstore.RandomAccessStore.writeChunk(RandomAccessStore.java:366)
+	at org.h2.mvstore.RandomAccessStore.writeChunk(RandomAccessStore.java:28)
+	at org.h2.mvstore.FileStore.storeBuffer(FileStore.java:1524)
+	... 28 more
+Caused by: java.nio.channels.ClosedChannelException
+	at java.base/sun.nio.ch.FileChannelImpl.ensureOpen(FileChannelImpl.java:160)
+	at java.base/sun.nio.ch.FileChannelImpl.write(FileChannelImpl.java:1114)
+	at org.h2.mvstore.DataUtils.writeFully(DataUtils.java:474)
+	... 33 more
+2024-07-27 09:27:08.704552+02:00 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLTimeoutException: Dépassement du temps lors du vérrouillage de la table {0}
+Timeout trying to lock table {0}; SQL statement:
+insert into REALM (ACCESS_CODE_LIFESPAN,LOGIN_LIFESPAN,USER_ACTION_LIFESPAN,ACCESS_TOKEN_LIFESPAN,ACCESS_TOKEN_LIFE_IMPLICIT,ACCOUNT_THEME,ADMIN_EVENTS_DETAILS_ENABLED,ADMIN_EVENTS_ENABLED,ADMIN_THEME,ALLOW_USER_MANAGED_ACCESS,BROWSER_FLOW,CLIENT_AUTH_FLOW,DEFAULT_LOCALE,DEFAULT_ROLE,DIRECT_GRANT_FLOW,DOCKER_AUTH_FLOW,DUPLICATE_EMAILS_ALLOWED,EDIT_USERNAME_ALLOWED,EMAIL_THEME,ENABLED,EVENTS_ENABLED,EVENTS_EXPIRATION,INTERNATIONALIZATION_ENABLED,LOGIN_THEME,LOGIN_WITH_EMAIL_ALLOWED,MASTER_ADMIN_CLIENT,NAME,NOT_BEFORE,OFFLINE_SESSION_IDLE_TIMEOUT,OTP_POLICY_ALG,OTP_POLICY_DIGITS,OTP_POLICY_COUNTER,OTP_POLICY_WINDOW,OTP_POLICY_PERIOD,OTP_POLICY_TYPE,PASSWORD_POLICY,REFRESH_TOKEN_MAX_REUSE,REGISTRATION_ALLOWED,REG_EMAIL_AS_USERNAME,REGISTRATION_FLOW,REMEMBER_ME,RESET_CREDENTIALS_FLOW,RESET_PASSWORD_ALLOWED,REVOKE_REFRESH_TOKEN,SSL_REQUIRED,SSO_IDLE_TIMEOUT,SSO_IDLE_TIMEOUT_REMEMBER_ME,SSO_MAX_LIFESPAN,SSO_MAX_LIFESPAN_REMEMBER_ME,VERIFY_EMAIL,ID) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) [50200-224]
+2024-07-27 09:27:11.381415+02:00 jdbc[7]: exception
+org.h2.jdbc.JdbcSQLTimeoutException: Dépassement du temps lors du vérrouillage de la table {0}
+Timeout trying to lock table {0}; SQL statement:
+insert into REALM (ACCESS_CODE_LIFESPAN,LOGIN_LIFESPAN,USER_ACTION_LIFESPAN,ACCESS_TOKEN_LIFESPAN,ACCESS_TOKEN_LIFE_IMPLICIT,ACCOUNT_THEME,ADMIN_EVENTS_DETAILS_ENABLED,ADMIN_EVENTS_ENABLED,ADMIN_THEME,ALLOW_USER_MANAGED_ACCESS,BROWSER_FLOW,CLIENT_AUTH_FLOW,DEFAULT_LOCALE,DEFAULT_ROLE,DIRECT_GRANT_FLOW,DOCKER_AUTH_FLOW,DUPLICATE_EMAILS_ALLOWED,EDIT_USERNAME_ALLOWED,EMAIL_THEME,ENABLED,EVENTS_ENABLED,EVENTS_EXPIRATION,INTERNATIONALIZATION_ENABLED,LOGIN_THEME,LOGIN_WITH_EMAIL_ALLOWED,MASTER_ADMIN_CLIENT,NAME,NOT_BEFORE,OFFLINE_SESSION_IDLE_TIMEOUT,OTP_POLICY_ALG,OTP_POLICY_DIGITS,OTP_POLICY_COUNTER,OTP_POLICY_WINDOW,OTP_POLICY_PERIOD,OTP_POLICY_TYPE,PASSWORD_POLICY,REFRESH_TOKEN_MAX_REUSE,REGISTRATION_ALLOWED,REG_EMAIL_AS_USERNAME,REGISTRATION_FLOW,REMEMBER_ME,RESET_CREDENTIALS_FLOW,RESET_PASSWORD_ALLOWED,REVOKE_REFRESH_TOKEN,SSL_REQUIRED,SSO_IDLE_TIMEOUT,SSO_IDLE_TIMEOUT_REMEMBER_ME,SSO_MAX_LIFESPAN,SSO_MAX_LIFESPAN_REMEMBER_ME,VERIFY_EMAIL,ID) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) [50200-224]
+2024-07-27 09:27:11.027304+02:00 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLTimeoutException: Dépassement du temps lors du vérrouillage de la table {0}
+Timeout trying to lock table {0}; SQL statement:
+insert into REALM (ACCESS_CODE_LIFESPAN,LOGIN_LIFESPAN,USER_ACTION_LIFESPAN,ACCESS_TOKEN_LIFESPAN,ACCESS_TOKEN_LIFE_IMPLICIT,ACCOUNT_THEME,ADMIN_EVENTS_DETAILS_ENABLED,ADMIN_EVENTS_ENABLED,ADMIN_THEME,ALLOW_USER_MANAGED_ACCESS,BROWSER_FLOW,CLIENT_AUTH_FLOW,DEFAULT_LOCALE,DEFAULT_ROLE,DIRECT_GRANT_FLOW,DOCKER_AUTH_FLOW,DUPLICATE_EMAILS_ALLOWED,EDIT_USERNAME_ALLOWED,EMAIL_THEME,ENABLED,EVENTS_ENABLED,EVENTS_EXPIRATION,INTERNATIONALIZATION_ENABLED,LOGIN_THEME,LOGIN_WITH_EMAIL_ALLOWED,MASTER_ADMIN_CLIENT,NAME,NOT_BEFORE,OFFLINE_SESSION_IDLE_TIMEOUT,OTP_POLICY_ALG,OTP_POLICY_DIGITS,OTP_POLICY_COUNTER,OTP_POLICY_WINDOW,OTP_POLICY_PERIOD,OTP_POLICY_TYPE,PASSWORD_POLICY,REFRESH_TOKEN_MAX_REUSE,REGISTRATION_ALLOWED,REG_EMAIL_AS_USERNAME,REGISTRATION_FLOW,REMEMBER_ME,RESET_CREDENTIALS_FLOW,RESET_PASSWORD_ALLOWED,REVOKE_REFRESH_TOKEN,SSL_REQUIRED,SSO_IDLE_TIMEOUT,SSO_IDLE_TIMEOUT_REMEMBER_ME,SSO_MAX_LIFESPAN,SSO_MAX_LIFESPAN_REMEMBER_ME,VERIFY_EMAIL,ID) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) [50200-224]
+2024-07-27 09:27:09.901346+02:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLTimeoutException: Dépassement du temps lors du vérrouillage de la table {0}
+Timeout trying to lock table {0}; SQL statement:
+insert into REALM (ACCESS_CODE_LIFESPAN,LOGIN_LIFESPAN,USER_ACTION_LIFESPAN,ACCESS_TOKEN_LIFESPAN,ACCESS_TOKEN_LIFE_IMPLICIT,ACCOUNT_THEME,ADMIN_EVENTS_DETAILS_ENABLED,ADMIN_EVENTS_ENABLED,ADMIN_THEME,ALLOW_USER_MANAGED_ACCESS,BROWSER_FLOW,CLIENT_AUTH_FLOW,DEFAULT_LOCALE,DEFAULT_ROLE,DIRECT_GRANT_FLOW,DOCKER_AUTH_FLOW,DUPLICATE_EMAILS_ALLOWED,EDIT_USERNAME_ALLOWED,EMAIL_THEME,ENABLED,EVENTS_ENABLED,EVENTS_EXPIRATION,INTERNATIONALIZATION_ENABLED,LOGIN_THEME,LOGIN_WITH_EMAIL_ALLOWED,MASTER_ADMIN_CLIENT,NAME,NOT_BEFORE,OFFLINE_SESSION_IDLE_TIMEOUT,OTP_POLICY_ALG,OTP_POLICY_DIGITS,OTP_POLICY_COUNTER,OTP_POLICY_WINDOW,OTP_POLICY_PERIOD,OTP_POLICY_TYPE,PASSWORD_POLICY,REFRESH_TOKEN_MAX_REUSE,REGISTRATION_ALLOWED,REG_EMAIL_AS_USERNAME,REGISTRATION_FLOW,REMEMBER_ME,RESET_CREDENTIALS_FLOW,RESET_PASSWORD_ALLOWED,REVOKE_REFRESH_TOKEN,SSL_REQUIRED,SSO_IDLE_TIMEOUT,SSO_IDLE_TIMEOUT_REMEMBER_ME,SSO_MAX_LIFESPAN,SSO_MAX_LIFESPAN_REMEMBER_ME,VERIFY_EMAIL,ID) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) [50200-224]
+2024-07-27 09:27:12.077376+02:00 jdbc[8]: exception
+org.h2.jdbc.JdbcSQLTimeoutException: Dépassement du temps lors du vérrouillage de la table {0}
+Timeout trying to lock table {0}; SQL statement:
+insert into REALM (ACCESS_CODE_LIFESPAN,LOGIN_LIFESPAN,USER_ACTION_LIFESPAN,ACCESS_TOKEN_LIFESPAN,ACCESS_TOKEN_LIFE_IMPLICIT,ACCOUNT_THEME,ADMIN_EVENTS_DETAILS_ENABLED,ADMIN_EVENTS_ENABLED,ADMIN_THEME,ALLOW_USER_MANAGED_ACCESS,BROWSER_FLOW,CLIENT_AUTH_FLOW,DEFAULT_LOCALE,DEFAULT_ROLE,DIRECT_GRANT_FLOW,DOCKER_AUTH_FLOW,DUPLICATE_EMAILS_ALLOWED,EDIT_USERNAME_ALLOWED,EMAIL_THEME,ENABLED,EVENTS_ENABLED,EVENTS_EXPIRATION,INTERNATIONALIZATION_ENABLED,LOGIN_THEME,LOGIN_WITH_EMAIL_ALLOWED,MASTER_ADMIN_CLIENT,NAME,NOT_BEFORE,OFFLINE_SESSION_IDLE_TIMEOUT,OTP_POLICY_ALG,OTP_POLICY_DIGITS,OTP_POLICY_COUNTER,OTP_POLICY_WINDOW,OTP_POLICY_PERIOD,OTP_POLICY_TYPE,PASSWORD_POLICY,REFRESH_TOKEN_MAX_REUSE,REGISTRATION_ALLOWED,REG_EMAIL_AS_USERNAME,REGISTRATION_FLOW,REMEMBER_ME,RESET_CREDENTIALS_FLOW,RESET_PASSWORD_ALLOWED,REVOKE_REFRESH_TOKEN,SSL_REQUIRED,SSO_IDLE_TIMEOUT,SSO_IDLE_TIMEOUT_REMEMBER_ME,SSO_MAX_LIFESPAN,SSO_MAX_LIFESPAN_REMEMBER_ME,VERIFY_EMAIL,ID) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) [50200-224]
+2024-07-27 09:27:14.674263+02:00 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLTimeoutException: Dépassement du temps lors du vérrouillage de la table {0}
+Timeout trying to lock table {0}; SQL statement:
+insert into REALM (ACCESS_CODE_LIFESPAN,LOGIN_LIFESPAN,USER_ACTION_LIFESPAN,ACCESS_TOKEN_LIFESPAN,ACCESS_TOKEN_LIFE_IMPLICIT,ACCOUNT_THEME,ADMIN_EVENTS_DETAILS_ENABLED,ADMIN_EVENTS_ENABLED,ADMIN_THEME,ALLOW_USER_MANAGED_ACCESS,BROWSER_FLOW,CLIENT_AUTH_FLOW,DEFAULT_LOCALE,DEFAULT_ROLE,DIRECT_GRANT_FLOW,DOCKER_AUTH_FLOW,DUPLICATE_EMAILS_ALLOWED,EDIT_USERNAME_ALLOWED,EMAIL_THEME,ENABLED,EVENTS_ENABLED,EVENTS_EXPIRATION,INTERNATIONALIZATION_ENABLED,LOGIN_THEME,LOGIN_WITH_EMAIL_ALLOWED,MASTER_ADMIN_CLIENT,NAME,NOT_BEFORE,OFFLINE_SESSION_IDLE_TIMEOUT,OTP_POLICY_ALG,OTP_POLICY_DIGITS,OTP_POLICY_COUNTER,OTP_POLICY_WINDOW,OTP_POLICY_PERIOD,OTP_POLICY_TYPE,PASSWORD_POLICY,REFRESH_TOKEN_MAX_REUSE,REGISTRATION_ALLOWED,REG_EMAIL_AS_USERNAME,REGISTRATION_FLOW,REMEMBER_ME,RESET_CREDENTIALS_FLOW,RESET_PASSWORD_ALLOWED,REVOKE_REFRESH_TOKEN,SSL_REQUIRED,SSO_IDLE_TIMEOUT,SSO_IDLE_TIMEOUT_REMEMBER_ME,SSO_MAX_LIFESPAN,SSO_MAX_LIFESPAN_REMEMBER_ME,VERIFY_EMAIL,ID) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) [50200-224]
+2024-07-27 09:27:14.832101+02:00 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLTimeoutException: Dépassement du temps lors du vérrouillage de la table {0}
+Timeout trying to lock table {0}; SQL statement:
+insert into REALM (ACCESS_CODE_LIFESPAN,LOGIN_LIFESPAN,USER_ACTION_LIFESPAN,ACCESS_TOKEN_LIFESPAN,ACCESS_TOKEN_LIFE_IMPLICIT,ACCOUNT_THEME,ADMIN_EVENTS_DETAILS_ENABLED,ADMIN_EVENTS_ENABLED,ADMIN_THEME,ALLOW_USER_MANAGED_ACCESS,BROWSER_FLOW,CLIENT_AUTH_FLOW,DEFAULT_LOCALE,DEFAULT_ROLE,DIRECT_GRANT_FLOW,DOCKER_AUTH_FLOW,DUPLICATE_EMAILS_ALLOWED,EDIT_USERNAME_ALLOWED,EMAIL_THEME,ENABLED,EVENTS_ENABLED,EVENTS_EXPIRATION,INTERNATIONALIZATION_ENABLED,LOGIN_THEME,LOGIN_WITH_EMAIL_ALLOWED,MASTER_ADMIN_CLIENT,NAME,NOT_BEFORE,OFFLINE_SESSION_IDLE_TIMEOUT,OTP_POLICY_ALG,OTP_POLICY_DIGITS,OTP_POLICY_COUNTER,OTP_POLICY_WINDOW,OTP_POLICY_PERIOD,OTP_POLICY_TYPE,PASSWORD_POLICY,REFRESH_TOKEN_MAX_REUSE,REGISTRATION_ALLOWED,REG_EMAIL_AS_USERNAME,REGISTRATION_FLOW,REMEMBER_ME,RESET_CREDENTIALS_FLOW,RESET_PASSWORD_ALLOWED,REVOKE_REFRESH_TOKEN,SSL_REQUIRED,SSO_IDLE_TIMEOUT,SSO_IDLE_TIMEOUT_REMEMBER_ME,SSO_MAX_LIFESPAN,SSO_MAX_LIFESPAN_REMEMBER_ME,VERIFY_EMAIL,ID) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) [50200-224]
+2024-07-27 09:27:14.944311+02:00 jdbc[7]: exception
+org.h2.jdbc.JdbcSQLTimeoutException: Dépassement du temps lors du vérrouillage de la table {0}
+Timeout trying to lock table {0}; SQL statement:
+insert into REALM (ACCESS_CODE_LIFESPAN,LOGIN_LIFESPAN,USER_ACTION_LIFESPAN,ACCESS_TOKEN_LIFESPAN,ACCESS_TOKEN_LIFE_IMPLICIT,ACCOUNT_THEME,ADMIN_EVENTS_DETAILS_ENABLED,ADMIN_EVENTS_ENABLED,ADMIN_THEME,ALLOW_USER_MANAGED_ACCESS,BROWSER_FLOW,CLIENT_AUTH_FLOW,DEFAULT_LOCALE,DEFAULT_ROLE,DIRECT_GRANT_FLOW,DOCKER_AUTH_FLOW,DUPLICATE_EMAILS_ALLOWED,EDIT_USERNAME_ALLOWED,EMAIL_THEME,ENABLED,EVENTS_ENABLED,EVENTS_EXPIRATION,INTERNATIONALIZATION_ENABLED,LOGIN_THEME,LOGIN_WITH_EMAIL_ALLOWED,MASTER_ADMIN_CLIENT,NAME,NOT_BEFORE,OFFLINE_SESSION_IDLE_TIMEOUT,OTP_POLICY_ALG,OTP_POLICY_DIGITS,OTP_POLICY_COUNTER,OTP_POLICY_WINDOW,OTP_POLICY_PERIOD,OTP_POLICY_TYPE,PASSWORD_POLICY,REFRESH_TOKEN_MAX_REUSE,REGISTRATION_ALLOWED,REG_EMAIL_AS_USERNAME,REGISTRATION_FLOW,REMEMBER_ME,RESET_CREDENTIALS_FLOW,RESET_PASSWORD_ALLOWED,REVOKE_REFRESH_TOKEN,SSL_REQUIRED,SSO_IDLE_TIMEOUT,SSO_IDLE_TIMEOUT_REMEMBER_ME,SSO_MAX_LIFESPAN,SSO_MAX_LIFESPAN_REMEMBER_ME,VERIFY_EMAIL,ID) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) [50200-224]
+2024-08-20 10:29:13.305745+02:00 database: CREATE CACHED TABLE "PUBLIC"."FEDERATED_IDENTITY"(
+    "IDENTITY_PROVIDER" CHARACTER VARYING(255) NOT NULL,
+    "REALM_ID" CHARACTER VARYING(36),
+    "FEDERATED_USER_ID" CHARACTER VARYING(255),
+    "FEDERATED_USERNAME" CHARACTER VARYING(255),
+    "TOKEN" CHARACTER LARGE OBJECT,
+    "USER_ID" CHARACTER VARYING(36) NOT NULL
+)
+org.h2.jdbc.JdbcSQLNonTransientException: IO Exception: "C:/Users/maxim/Downloads/keycloak-24.0.4(2)/keycloak-24.0.4/data/h2/keycloakdb.mv.db"
+IO Exception: "C:/Users/maxim/Downloads/keycloak-24.0.4(2)/keycloak-24.0.4/data/h2/keycloakdb.mv.db"; SQL statement:
+CREATE CACHED TABLE "PUBLIC"."FEDERATED_IDENTITY"(
+    "IDENTITY_PROVIDER" CHARACTER VARYING(255) NOT NULL,
+    "REALM_ID" CHARACTER VARYING(36),
+    "FEDERATED_USER_ID" CHARACTER VARYING(255),
+    "FEDERATED_USERNAME" CHARACTER VARYING(255),
+    "TOKEN" CHARACTER LARGE OBJECT,
+    "USER_ID" CHARACTER VARYING(36) NOT NULL
+) [90028-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.mvstore.db.Store.convertMVStoreException(Store.java:168)
+	at org.h2.mvstore.db.Store.createTable(Store.java:220)
+	at org.h2.schema.Schema.createTable(Schema.java:797)
+	at org.h2.command.ddl.CreateTable.update(CreateTable.java:112)
+	at org.h2.engine.MetaRecord.prepareAndExecute(MetaRecord.java:77)
+	at org.h2.engine.Database.executeMeta(Database.java:666)
+	at org.h2.engine.Database.executeMeta(Database.java:638)
+	at org.h2.engine.Database.<init>(Database.java:359)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at org.h2.jdbcx.JdbcDataSource.getXAConnection(JdbcDataSource.java:322)
+	at io.agroal.pool.ConnectionFactory.createConnection(ConnectionFactory.java:231)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:545)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:526)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at io.agroal.pool.util.PriorityScheduledExecutor.beforeExecute(PriorityScheduledExecutor.java:75)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+Caused by: org.h2.mvstore.MVStoreException: Reading from file sun.nio.ch.FileChannelImpl@753f378e failed at 1718093 (length -1), read 0, remaining 768 [2.2.224/1]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.DataUtils.readFully(DataUtils.java:455)
+	at org.h2.mvstore.FileStore.readFully(FileStore.java:719)
+	at org.h2.mvstore.SingleFileStore.readFully(SingleFileStore.java:60)
+	at org.h2.mvstore.SingleFileStore.readFully(SingleFileStore.java:28)
+	at org.h2.mvstore.SFChunk.readFully(SFChunk.java:35)
+	at org.h2.mvstore.Chunk.readBufferForPage(Chunk.java:465)
+	at org.h2.mvstore.FileStore.readPage(FileStore.java:1960)
+	at org.h2.mvstore.MVStore.readPage(MVStore.java:1021)
+	at org.h2.mvstore.MVMap.readPage(MVMap.java:632)
+	at org.h2.mvstore.MVMap.readOrCreateRootPage(MVMap.java:657)
+	at org.h2.mvstore.MVMap.setRootPos(MVMap.java:642)
+	at org.h2.mvstore.MVStore.openMap(MVStore.java:479)
+	at org.h2.mvstore.MVStore.openMap(MVStore.java:426)
+	at org.h2.mvstore.tx.TransactionStore.openMap(TransactionStore.java:564)
+	at org.h2.mvstore.tx.TransactionStore.openVersionedMap(TransactionStore.java:550)
+	at org.h2.mvstore.tx.Transaction.openMap(Transaction.java:456)
+	at org.h2.mvstore.db.MVPrimaryIndex.<init>(MVPrimaryIndex.java:53)
+	at org.h2.mvstore.db.MVTable.<init>(MVTable.java:156)
+	at org.h2.mvstore.db.Store.createTable(Store.java:216)
+	... 20 more
+Caused by: java.nio.channels.ClosedByInterruptException
+	at java.base/java.nio.channels.spi.AbstractInterruptibleChannel.end(AbstractInterruptibleChannel.java:200)
+	at java.base/sun.nio.ch.FileChannelImpl.endBlocking(FileChannelImpl.java:172)
+	at java.base/sun.nio.ch.FileChannelImpl.readInternal(FileChannelImpl.java:1103)
+	at java.base/sun.nio.ch.FileChannelImpl.read(FileChannelImpl.java:1075)
+	at org.h2.mvstore.DataUtils.readFully(DataUtils.java:441)
+	... 38 more
+2024-08-20 10:29:13.329272+02:00 database: opening C:/Users/maxim/Downloads/keycloak-24.0.4(2)/keycloak-24.0.4/data/h2/keycloakdb
+org.h2.message.DbException: IO Exception: "C:/Users/maxim/Downloads/keycloak-24.0.4(2)/keycloak-24.0.4/data/h2/keycloakdb.mv.db"
+IO Exception: "C:/Users/maxim/Downloads/keycloak-24.0.4(2)/keycloak-24.0.4/data/h2/keycloakdb.mv.db" [90028-224]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.mvstore.db.Store.convertMVStoreException(Store.java:168)
+	at org.h2.mvstore.db.Store.createTable(Store.java:220)
+	at org.h2.schema.Schema.createTable(Schema.java:797)
+	at org.h2.command.ddl.CreateTable.update(CreateTable.java:112)
+	at org.h2.engine.MetaRecord.prepareAndExecute(MetaRecord.java:77)
+	at org.h2.engine.Database.executeMeta(Database.java:666)
+	at org.h2.engine.Database.executeMeta(Database.java:638)
+	at org.h2.engine.Database.<init>(Database.java:359)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at org.h2.jdbcx.JdbcDataSource.getXAConnection(JdbcDataSource.java:322)
+	at io.agroal.pool.ConnectionFactory.createConnection(ConnectionFactory.java:231)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:545)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:526)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at io.agroal.pool.util.PriorityScheduledExecutor.beforeExecute(PriorityScheduledExecutor.java:75)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: IO Exception: "C:/Users/maxim/Downloads/keycloak-24.0.4(2)/keycloak-24.0.4/data/h2/keycloakdb.mv.db"
+IO Exception: "C:/Users/maxim/Downloads/keycloak-24.0.4(2)/keycloak-24.0.4/data/h2/keycloakdb.mv.db"; SQL statement:
+CREATE CACHED TABLE "PUBLIC"."FEDERATED_IDENTITY"(
+    "IDENTITY_PROVIDER" CHARACTER VARYING(255) NOT NULL,
+    "REALM_ID" CHARACTER VARYING(36),
+    "FEDERATED_USER_ID" CHARACTER VARYING(255),
+    "FEDERATED_USERNAME" CHARACTER VARYING(255),
+    "TOKEN" CHARACTER LARGE OBJECT,
+    "USER_ID" CHARACTER VARYING(36) NOT NULL
+) [90028-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 23 more
+Caused by: org.h2.mvstore.MVStoreException: Reading from file sun.nio.ch.FileChannelImpl@753f378e failed at 1718093 (length -1), read 0, remaining 768 [2.2.224/1]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.DataUtils.readFully(DataUtils.java:455)
+	at org.h2.mvstore.FileStore.readFully(FileStore.java:719)
+	at org.h2.mvstore.SingleFileStore.readFully(SingleFileStore.java:60)
+	at org.h2.mvstore.SingleFileStore.readFully(SingleFileStore.java:28)
+	at org.h2.mvstore.SFChunk.readFully(SFChunk.java:35)
+	at org.h2.mvstore.Chunk.readBufferForPage(Chunk.java:465)
+	at org.h2.mvstore.FileStore.readPage(FileStore.java:1960)
+	at org.h2.mvstore.MVStore.readPage(MVStore.java:1021)
+	at org.h2.mvstore.MVMap.readPage(MVMap.java:632)
+	at org.h2.mvstore.MVMap.readOrCreateRootPage(MVMap.java:657)
+	at org.h2.mvstore.MVMap.setRootPos(MVMap.java:642)
+	at org.h2.mvstore.MVStore.openMap(MVStore.java:479)
+	at org.h2.mvstore.MVStore.openMap(MVStore.java:426)
+	at org.h2.mvstore.tx.TransactionStore.openMap(TransactionStore.java:564)
+	at org.h2.mvstore.tx.TransactionStore.openVersionedMap(TransactionStore.java:550)
+	at org.h2.mvstore.tx.Transaction.openMap(Transaction.java:456)
+	at org.h2.mvstore.db.MVPrimaryIndex.<init>(MVPrimaryIndex.java:53)
+	at org.h2.mvstore.db.MVTable.<init>(MVTable.java:156)
+	at org.h2.mvstore.db.Store.createTable(Store.java:216)
+	... 20 more
+Caused by: java.nio.channels.ClosedByInterruptException
+	at java.base/java.nio.channels.spi.AbstractInterruptibleChannel.end(AbstractInterruptibleChannel.java:200)
+	at java.base/sun.nio.ch.FileChannelImpl.endBlocking(FileChannelImpl.java:172)
+	at java.base/sun.nio.ch.FileChannelImpl.readInternal(FileChannelImpl.java:1103)
+	at java.base/sun.nio.ch.FileChannelImpl.read(FileChannelImpl.java:1075)
+	at org.h2.mvstore.DataUtils.readFully(DataUtils.java:441)
+	... 38 more
+2024-08-20 10:29:13.359973+02:00 database: flush
+org.h2.message.DbException: Erreur générale: "org.h2.mvstore.MVStoreException: Writing to sun.nio.ch.FileChannelImpl@753f378e failed; length 8192 at 12288 [2.2.224/2]"
+General error: "org.h2.mvstore.MVStoreException: Writing to sun.nio.ch.FileChannelImpl@753f378e failed; length 8192 at 12288 [2.2.224/2]" [50000-224]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1546)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
+	at org.h2.mvstore.FileStore.storeBuffer(FileStore.java:1527)
+	at org.h2.mvstore.FileStore.lambda$serializeAndStore$3(FileStore.java:1432)
+	at org.h2.mvstore.FileStore.submitOrRun(FileStore.java:1401)
+	at org.h2.mvstore.FileStore.serializeAndStore(FileStore.java:1432)
+	at org.h2.mvstore.FileStore.lambda$storeIt$2(FileStore.java:1376)
+	at org.h2.mvstore.FileStore.submitOrRun(FileStore.java:1401)
+	at org.h2.mvstore.FileStore.storeIt(FileStore.java:1375)
+	at org.h2.mvstore.MVStore.storeNow(MVStore.java:843)
+	at org.h2.mvstore.MVStore.store(MVStore.java:808)
+	at org.h2.mvstore.MVStore.commit(MVStore.java:778)
+	at org.h2.mvstore.MVStore.commit(MVStore.java:770)
+	at org.h2.mvstore.tx.TransactionStore.close(TransactionStore.java:365)
+	at org.h2.mvstore.db.Store.close(Store.java:349)
+	at org.h2.engine.Database.closeOpenFilesAndUnlock(Database.java:1293)
+	at org.h2.engine.Database.<init>(Database.java:401)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at org.h2.jdbcx.JdbcDataSource.getXAConnection(JdbcDataSource.java:322)
+	at io.agroal.pool.ConnectionFactory.createConnection(ConnectionFactory.java:231)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:545)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:526)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at io.agroal.pool.util.PriorityScheduledExecutor.beforeExecute(PriorityScheduledExecutor.java:75)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Erreur générale: "org.h2.mvstore.MVStoreException: Writing to sun.nio.ch.FileChannelImpl@753f378e failed; length 8192 at 12288 [2.2.224/2]"
+General error: "org.h2.mvstore.MVStoreException: Writing to sun.nio.ch.FileChannelImpl@753f378e failed; length 8192 at 12288 [2.2.224/2]" [50000-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 34 more
+Caused by: org.h2.mvstore.MVStoreException: Writing to sun.nio.ch.FileChannelImpl@753f378e failed; length 8192 at 12288 [2.2.224/2]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.DataUtils.writeFully(DataUtils.java:478)
+	at org.h2.mvstore.SingleFileStore.writeFully(SingleFileStore.java:67)
+	at org.h2.mvstore.SingleFileStore.writeFully(SingleFileStore.java:28)
+	at org.h2.mvstore.RandomAccessStore.writeChunk(RandomAccessStore.java:366)
+	at org.h2.mvstore.RandomAccessStore.writeChunk(RandomAccessStore.java:28)
+	at org.h2.mvstore.FileStore.storeBuffer(FileStore.java:1524)
+	... 28 more
+Caused by: java.nio.channels.ClosedChannelException
+	at java.base/sun.nio.ch.FileChannelImpl.ensureOpen(FileChannelImpl.java:160)
+	at java.base/sun.nio.ch.FileChannelImpl.write(FileChannelImpl.java:1114)
+	at org.h2.mvstore.DataUtils.writeFully(DataUtils.java:474)
+	... 33 more
+2024-09-21 18:40:05.701706+02:00 database: opening C:/Users/maxim/Downloads/keycloak-24.0.4(2)/keycloak-24.0.4/data/h2/keycloakdb
+org.h2.message.DbException: IO Exception: "C:/Users/maxim/Downloads/keycloak-24.0.4(2)/keycloak-24.0.4/data/h2/keycloakdb.mv.db"
+IO Exception: "C:/Users/maxim/Downloads/keycloak-24.0.4(2)/keycloak-24.0.4/data/h2/keycloakdb.mv.db" [90028-224]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.mvstore.db.Store.convertMVStoreException(Store.java:168)
+	at org.h2.mvstore.db.Store.<init>(Store.java:142)
+	at org.h2.engine.Database.<init>(Database.java:326)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at org.h2.jdbcx.JdbcDataSource.getXAConnection(JdbcDataSource.java:322)
+	at io.agroal.pool.ConnectionFactory.createConnection(ConnectionFactory.java:231)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:545)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:526)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at io.agroal.pool.util.PriorityScheduledExecutor.beforeExecute(PriorityScheduledExecutor.java:75)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: IO Exception: "C:/Users/maxim/Downloads/keycloak-24.0.4(2)/keycloak-24.0.4/data/h2/keycloakdb.mv.db"
+IO Exception: "C:/Users/maxim/Downloads/keycloak-24.0.4(2)/keycloak-24.0.4/data/h2/keycloakdb.mv.db" [90028-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 18 more
+Caused by: org.h2.mvstore.MVStoreException: Reading from file sun.nio.ch.FileChannelImpl@214fd889 failed at 824305 (length -1), read 0, remaining 384 [2.2.224/1]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.DataUtils.readFully(DataUtils.java:455)
+	at org.h2.mvstore.FileStore.readFully(FileStore.java:719)
+	at org.h2.mvstore.SingleFileStore.readFully(SingleFileStore.java:60)
+	at org.h2.mvstore.SingleFileStore.readFully(SingleFileStore.java:28)
+	at org.h2.mvstore.SFChunk.readFully(SFChunk.java:35)
+	at org.h2.mvstore.Chunk.readBufferForPage(Chunk.java:465)
+	at org.h2.mvstore.FileStore.readPage(FileStore.java:1960)
+	at org.h2.mvstore.MVStore.readPage(MVStore.java:1021)
+	at org.h2.mvstore.MVMap.readPage(MVMap.java:632)
+	at org.h2.mvstore.Page$NonLeaf.getChildPage(Page.java:1117)
+	at org.h2.mvstore.Cursor.hasNext(Cursor.java:64)
+	at org.h2.mvstore.MVStore.scrubMetaMap(MVStore.java:325)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:300)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2035)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	... 15 more
+Caused by: java.nio.channels.ClosedByInterruptException
+	at java.base/java.nio.channels.spi.AbstractInterruptibleChannel.end(AbstractInterruptibleChannel.java:200)
+	at java.base/sun.nio.ch.FileChannelImpl.endBlocking(FileChannelImpl.java:172)
+	at java.base/sun.nio.ch.FileChannelImpl.readInternal(FileChannelImpl.java:1103)
+	at java.base/sun.nio.ch.FileChannelImpl.read(FileChannelImpl.java:1075)
+	at org.h2.mvstore.DataUtils.readFully(DataUtils.java:441)
+	... 29 more
+2024-09-22 09:56:35.090344+02:00 database: flush
+org.h2.message.DbException: Erreur générale: "org.h2.mvstore.MVStoreException: Writing to sun.nio.ch.FileChannelImpl@1ec87e60 failed; length 8192 at 61440 [2.2.224/2]"
+General error: "org.h2.mvstore.MVStoreException: Writing to sun.nio.ch.FileChannelImpl@1ec87e60 failed; length 8192 at 61440 [2.2.224/2]" [50000-224]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1546)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
+	at org.h2.mvstore.FileStore.storeBuffer(FileStore.java:1527)
+	at org.h2.mvstore.FileStore.lambda$serializeAndStore$3(FileStore.java:1432)
+	at org.h2.mvstore.FileStore.submitOrRun(FileStore.java:1401)
+	at org.h2.mvstore.FileStore.serializeAndStore(FileStore.java:1432)
+	at org.h2.mvstore.FileStore.lambda$storeIt$2(FileStore.java:1376)
+	at org.h2.mvstore.FileStore.submitOrRun(FileStore.java:1401)
+	at org.h2.mvstore.FileStore.storeIt(FileStore.java:1375)
+	at org.h2.mvstore.MVStore.storeNow(MVStore.java:843)
+	at org.h2.mvstore.MVStore.store(MVStore.java:808)
+	at org.h2.mvstore.MVStore.commit(MVStore.java:778)
+	at org.h2.mvstore.MVStore.commit(MVStore.java:770)
+	at org.h2.mvstore.tx.TransactionStore.close(TransactionStore.java:365)
+	at org.h2.mvstore.db.Store.close(Store.java:349)
+	at org.h2.engine.Database.closeOpenFilesAndUnlock(Database.java:1293)
+	at org.h2.engine.Database.<init>(Database.java:401)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at org.h2.jdbcx.JdbcDataSource.getXAConnection(JdbcDataSource.java:322)
+	at io.agroal.pool.ConnectionFactory.createConnection(ConnectionFactory.java:231)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:545)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:526)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at io.agroal.pool.util.PriorityScheduledExecutor.beforeExecute(PriorityScheduledExecutor.java:75)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Erreur générale: "org.h2.mvstore.MVStoreException: Writing to sun.nio.ch.FileChannelImpl@1ec87e60 failed; length 8192 at 61440 [2.2.224/2]"
+General error: "org.h2.mvstore.MVStoreException: Writing to sun.nio.ch.FileChannelImpl@1ec87e60 failed; length 8192 at 61440 [2.2.224/2]" [50000-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 34 more
+Caused by: org.h2.mvstore.MVStoreException: Writing to sun.nio.ch.FileChannelImpl@1ec87e60 failed; length 8192 at 61440 [2.2.224/2]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.DataUtils.writeFully(DataUtils.java:478)
+	at org.h2.mvstore.SingleFileStore.writeFully(SingleFileStore.java:67)
+	at org.h2.mvstore.SingleFileStore.writeFully(SingleFileStore.java:28)
+	at org.h2.mvstore.RandomAccessStore.writeChunk(RandomAccessStore.java:366)
+	at org.h2.mvstore.RandomAccessStore.writeChunk(RandomAccessStore.java:28)
+	at org.h2.mvstore.FileStore.storeBuffer(FileStore.java:1524)
+	... 28 more
+Caused by: java.nio.channels.ClosedChannelException
+	at java.base/sun.nio.ch.FileChannelImpl.ensureOpen(FileChannelImpl.java:160)
+	at java.base/sun.nio.ch.FileChannelImpl.write(FileChannelImpl.java:1114)
+	at org.h2.mvstore.DataUtils.writeFully(DataUtils.java:474)
+	... 33 more
+2024-09-22 11:44:38.142434+02:00 database: opening C:/Users/maxim/Downloads/keycloak-24.0.4(2)/keycloak-24.0.4/data/h2/keycloakdb
+org.h2.message.DbException: IO Exception: "C:/Users/maxim/Downloads/keycloak-24.0.4(2)/keycloak-24.0.4/data/h2/keycloakdb.mv.db"
+IO Exception: "C:/Users/maxim/Downloads/keycloak-24.0.4(2)/keycloak-24.0.4/data/h2/keycloakdb.mv.db" [90028-224]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.mvstore.db.Store.convertMVStoreException(Store.java:168)
+	at org.h2.mvstore.db.Store.<init>(Store.java:142)
+	at org.h2.engine.Database.<init>(Database.java:326)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at org.h2.jdbcx.JdbcDataSource.getXAConnection(JdbcDataSource.java:322)
+	at io.agroal.pool.ConnectionFactory.createConnection(ConnectionFactory.java:231)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:545)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:526)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at io.agroal.pool.util.PriorityScheduledExecutor.beforeExecute(PriorityScheduledExecutor.java:75)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: IO Exception: "C:/Users/maxim/Downloads/keycloak-24.0.4(2)/keycloak-24.0.4/data/h2/keycloakdb.mv.db"
+IO Exception: "C:/Users/maxim/Downloads/keycloak-24.0.4(2)/keycloak-24.0.4/data/h2/keycloakdb.mv.db" [90028-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 18 more
+Caused by: org.h2.mvstore.MVStoreException: Reading from file sun.nio.ch.FileChannelImpl@66757d95 failed at 821937 (length -1), read 0, remaining 768 [2.2.224/1]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.DataUtils.readFully(DataUtils.java:455)
+	at org.h2.mvstore.FileStore.readFully(FileStore.java:719)
+	at org.h2.mvstore.SingleFileStore.readFully(SingleFileStore.java:60)
+	at org.h2.mvstore.SingleFileStore.readFully(SingleFileStore.java:28)
+	at org.h2.mvstore.SFChunk.readFully(SFChunk.java:35)
+	at org.h2.mvstore.Chunk.readBufferForPage(Chunk.java:465)
+	at org.h2.mvstore.FileStore.readPage(FileStore.java:1960)
+	at org.h2.mvstore.MVStore.readPage(MVStore.java:1021)
+	at org.h2.mvstore.MVMap.readPage(MVMap.java:632)
+	at org.h2.mvstore.Page$NonLeaf.getChildPage(Page.java:1117)
+	at org.h2.mvstore.Cursor.hasNext(Cursor.java:64)
+	at org.h2.mvstore.MVStore.scrubMetaMap(MVStore.java:325)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:300)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2035)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	... 15 more
+Caused by: java.nio.channels.ClosedByInterruptException
+	at java.base/java.nio.channels.spi.AbstractInterruptibleChannel.end(AbstractInterruptibleChannel.java:200)
+	at java.base/sun.nio.ch.FileChannelImpl.endBlocking(FileChannelImpl.java:172)
+	at java.base/sun.nio.ch.FileChannelImpl.readInternal(FileChannelImpl.java:1103)
+	at java.base/sun.nio.ch.FileChannelImpl.read(FileChannelImpl.java:1075)
+	at org.h2.mvstore.DataUtils.readFully(DataUtils.java:441)
+	... 29 more
